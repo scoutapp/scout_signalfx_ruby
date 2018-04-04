@@ -67,7 +67,7 @@ Each metric has the following dimensions:
 
 ## Contributing
 
-Bug reports and pull requests are welcome on GitHub at https://github.com/scoutapp/scout_signalfx.
+Bug reports and pull requests are welcome on GitHub at https://github.com/scoutapp/scout_signalfx_ruby.
 
 ## License
 

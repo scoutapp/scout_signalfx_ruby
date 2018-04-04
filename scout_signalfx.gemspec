@@ -10,7 +10,7 @@ Gem::Specification.new do |spec|
   spec.email         = ["derek.haynes@gmail.com"]
 
   spec.summary       = "Reports app performance metrics gathered via Scout to SignalFx"
-  spec.homepage      = "https://github.com/scoutapp/scout_signalfx"
+  spec.homepage      = "https://github.com/scoutapp/scout_signalfx_ruby"
   spec.license       = "MIT"
 
   # Prevent pushing this gem to RubyGems.org by setting 'allowed_push_host', or
