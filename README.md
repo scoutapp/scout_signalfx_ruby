@@ -24,7 +24,7 @@ Or install it yourself as:
 
 ## Configuration
 
-### Add a `config/initializers/signalfx.rb` file to your Rails app:
+__Add a `config/initializers/signalfx.rb` file to your Rails app:__
 
 Initialize a `SignalFx` client and pass it through to `ScoutSignalfx#init`:
 
@@ -35,7 +35,7 @@ ScoutSignalfx.init(SIGNAL_FX_CLIENT)
 
 Your SignalFx API access token can be obtained from the SignalFx organization you want to report data into.
 
-### Add a `config/scout_apm.yml` file to your Rails app:
+__Add a `config/scout_apm.yml` file to your Rails app:__
 
 ```yaml
 common: &defaults
