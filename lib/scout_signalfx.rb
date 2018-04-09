@@ -1,8 +1,8 @@
 module ScoutSignalfx
   # Takes a +SignalFxClient+ and configures the ScoutApm SignalFx Payload Plugin.
-  def self.init(signalfx_client)
+  def self.configure(signalfx_client)
     @@signalfx_client ||= signalfx_client
-    ScoutApm::Plugins.add_payload_callback(ScoutSignalfx::PayloadReporter)
+    ScoutApm::Extensions::Config.add_periodic_callback(ScoutSignalfx::PeriodicCallback)
   end
 
   def self.signalfx_client
@@ -11,4 +11,4 @@ module ScoutSignalfx
 end
 
 require "scout_signalfx/version"
-require "scout_signalfx/payload_reporter.rb"
+require "scout_signalfx/periodic_callback"

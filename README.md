@@ -30,7 +30,7 @@ Initialize a `SignalFx` client and pass it through to `ScoutSignalfx#init`:
 
 ```ruby
 SIGNAL_FX_CLIENT = SignalFx.new("[SIGNAL_FX_TOKEN]")
-ScoutSignalfx.init(SIGNAL_FX_CLIENT)
+ScoutSignalfx.configure(SIGNAL_FX_CLIENT)
 ```
 
 Your SignalFx API access token can be obtained from the SignalFx organization you want to report data into.
@@ -64,6 +64,12 @@ Each metric has the following dimensions:
 * app - The name of the app
 * host - The hostname of the running app
 * transaction - The name of the transaction. For example, `UsersController#index` becomes `users.index` in SignalFx.
+
+## Tests
+
+```ruby
+rake
+```
 
 ## Contributing
 

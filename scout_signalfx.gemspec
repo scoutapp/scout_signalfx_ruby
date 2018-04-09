@@ -28,8 +28,11 @@ Gem::Specification.new do |spec|
 
   spec.add_development_dependency "bundler", "~> 1.11"
   spec.add_development_dependency "rake", "~> 10.0"
+  spec.add_development_dependency "minitest"
+  spec.add_development_dependency "mocha"
+  spec.add_development_dependency "fakeweb", ["~> 1.3"]
 
-  spec.add_runtime_dependency "scout_apm"
+  spec.add_runtime_dependency "scout_apm", "~> 2.4.10.pre"
   spec.add_runtime_dependency "signalfx"
 
 end
