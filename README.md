@@ -51,6 +51,8 @@ _This step isn't required if you're an existing Scout customer._
 
 [See the Scout docs](http://help.apm.scoutapp.com/#ruby-agent) for advanced configuration instructions.
 
+The Scout gem auto-magically instruments your controller-actions. There's no more steps!
+
 ## Metric Schema
 
 The following metrics are reported once per-minute:
