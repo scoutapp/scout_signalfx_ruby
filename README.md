@@ -1,6 +1,6 @@
 # ScoutSignalfx
 
-![travis](https://travis-ci.org/scoutapp/scout_signalfx_ruby.svg?branch=master)
+[![Build Status](https://travis-ci.org/scoutapp/scout_signalfx_ruby.svg?branch=master)](https://travis-ci.org/scoutapp/scout_signalfx_ruby)
 
 Bring key health metrics for your Ruby on Rails app(s) into [SignalFx](https://signalfx.com/) with the `scout_signalfx` gem. The gem extends the [Scout](https://scoutapp.com) Ruby gem, which gathers detailed performance on every web request, and sends those metrics direct to SignalFx.
 
