@@ -10,8 +10,8 @@ class PeriodicCallbackTest < Minitest::Test
   end
 
   def test_call
-    callback = ScoutSignalfx::PeriodicCallback.new(reporting_period, metadata)
-    callback.call # would be great to validate the actual reported metrics
+    callback = ScoutSignalfx::PeriodicCallback.new
+    callback.call(reporting_period, metadata) # would be great to validate the actual reported metrics
   end
 
   private

@@ -1,13 +1,26 @@
 module ScoutSignalfx
   # This is ran after each reporting period (once per-minute).
-  class PeriodicCallback < ScoutApm::Extensions::PeriodicCallbackBase
+  class PeriodicCallback
+    def call(reporting_period, metadata)
+      @reporting_period = reporting_period
+      @metadata = metadata
+
+      return if controller_metrics.empty?
+      ScoutSignalfx.signalfx_client.send(
+        gauges: guages,
+        counters: counters,
+      )
+    end
+
+    private
+
     def metrics
-      reporting_period.metrics_payload
+      @reporting_period.metrics_payload
     end
 
     # The time associated w/the metrics
     def timestamp
-      Time.at(metadata[:agent_time].to_i)
+      Time.at(@metadata[:agent_time].to_i)
     end
 
     def timestamp_ms
@@ -67,14 +80,6 @@ module ScoutSignalfx
         {key: 'transaction', value: signalfx_transaction_name(metric_name)},
         {key: 'app', value: ScoutApm::Agent.instance.context.config.value('name')}
       ]
-    end
-
-    def call
-      return if controller_metrics.empty?
-      ScoutSignalfx.signalfx_client.send(
-        gauges: guages,
-        counters: counters,
-      )
     end
 
   end

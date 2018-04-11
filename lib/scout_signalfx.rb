@@ -2,7 +2,7 @@ module ScoutSignalfx
   # Takes a +SignalFxClient+ and configures the ScoutApm SignalFx Payload Plugin.
   def self.configure(signalfx_client)
     @@signalfx_client ||= signalfx_client
-    ScoutApm::Extensions::Config.add_periodic_callback(ScoutSignalfx::PeriodicCallback)
+    ScoutApm::Extensions::Config.add_periodic_callback(ScoutSignalfx::PeriodicCallback.new)
   end
 
   def self.signalfx_client
