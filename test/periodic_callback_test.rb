@@ -17,7 +17,7 @@ class PeriodicCallbackTest < Minitest::Test
   private
 
   def reporting_period
-    rp = ScoutApm::StoreReportingPeriod.new(ScoutApm::AgentContext.new, Time.at(metadata[:agent_time].to_i))
+    rp = ScoutApm::StoreReportingPeriod.new(Time.at(metadata[:agent_time].to_i), ScoutApm::AgentContext.new)
     rp.absorb_metrics!(metrics)
   end
 
