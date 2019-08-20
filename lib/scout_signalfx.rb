@@ -1,3 +1,5 @@
+require 'scout_apm'
+
 module ScoutSignalfx
   # Takes a +SignalFxClient+ and configures the ScoutApm SignalFx Payload Plugin.
   def self.configure(signalfx_client)
